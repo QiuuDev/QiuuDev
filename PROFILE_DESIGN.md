@@ -24,3 +24,7 @@ API failures leave existing cards intact and fail the workflow visibly. GitHub m
 Edit `README.md` for biography, project descriptions, and links. SVG assets remain editable source files. Run `python3 scripts/check_profile.py` to check rendering. Run `GH_TOKEN=... python3 scripts/update_profile.py` only in an environment with an authorized GitHub token; never commit a token.
 
 The profile links only to existing public projects. Add other social accounts only after their URLs have been verified.
+
+## Responsive refinement
+
+Mobile visitors receive larger typography, a two-column toolkit, project cards, and a readable telemetry dashboard. The mobile contribution card retains the yearly total and shows the most recent 12 weeks. Desktop displays the full-year matrix. Native expandable sections provide interaction without JavaScript.

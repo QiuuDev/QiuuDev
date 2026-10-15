@@ -1,4 +1,6 @@
 <picture>
+  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/hero-mobile-dark.svg">
+  <source media="(max-width: 768px)" srcset="assets/hero-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
   <img src="assets/hero-dark.svg" width="100%" alt="QiuuDev — building useful things, shaping better experiences. Animated cyber terminal with a Q monogram.">
@@ -36,6 +38,8 @@ Saya mengembangkan aplikasi web untuk membantu kebutuhan sehari-hari, mulai dari
 ## 02 / Toolkit
 
 <picture>
+  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/toolkit-mobile-dark.svg">
+  <source media="(max-width: 768px)" srcset="assets/toolkit-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/toolkit-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/toolkit-light.svg">
   <img src="assets/toolkit-dark.svg" width="100%" alt="Project toolkit: PHP, Laravel, MySQL, JavaScript, HTML, CSS, Git, and Vite.">
@@ -45,13 +49,29 @@ Technologies used across my public projects. Always learning through building.
 
 ## 03 / Selected work
 
-### [01 — Qiu's Schedule ↗](https://github.com/QiuuDev/Qiu_Schedule)
+<a href="https://github.com/QiuuDev/Qiu_Schedule">
+<picture>
+  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/project-schedule-mobile-dark.svg">
+  <source media="(max-width: 768px)" srcset="assets/project-schedule-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/project-schedule-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/project-schedule-light.svg">
+  <img src="assets/project-schedule-dark.svg" width="100%" alt="01 — Qiu's Schedule ↗">
+</picture>
+</a>
 
 **A clearer rhythm for everyday plans.** A PHP scheduling application with authentication, profile management, notifications, and an analytics dashboard.
 
 `PHP` · `MySQL` · `JavaScript` &nbsp; **[Explore project →](https://github.com/QiuuDev/Qiu_Schedule#readme)**
 
-### [02 — Booking Badminton ↗](https://github.com/QiuuDev/booking-badminton)
+<a href="https://github.com/QiuuDev/booking-badminton">
+<picture>
+  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/project-booking-mobile-dark.svg">
+  <source media="(max-width: 768px)" srcset="assets/project-booking-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/project-booking-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/project-booking-light.svg">
+  <img src="assets/project-booking-dark.svg" width="100%" alt="02 — Booking Badminton ↗">
+</picture>
+</a>
 
 **From an available court to a confirmed booking.** A Laravel API project documenting JWT authentication, court reservations, payment verification, and activity logs.
 
@@ -70,6 +90,8 @@ Technologies used across my public projects. Always learning through building.
 
 <a href="https://github.com/QiuuDev?tab=repositories">
 <picture>
+  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/activity-mobile-dark.svg">
+  <source media="(max-width: 768px)" srcset="assets/activity-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.svg">
   <img src="assets/activity-dark.svg" width="100%" alt="GitHub activity dashboard showing public repository statistics and recently updated projects. Generated daily; timestamp appears on the card.">
@@ -78,9 +100,11 @@ Technologies used across my public projects. Always learning through building.
 
 <a href="https://github.com/QiuuDev?tab=overview">
 <picture>
+  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/contributions-mobile-dark.svg">
+  <source media="(max-width: 768px)" srcset="assets/contributions-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/contributions-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/contributions-light.svg">
-  <img src="assets/contributions-dark.svg" width="100%" alt="Contribution matrix using GitHub's available contribution calendar for the last year. Updated daily.">
+  <img src="assets/contributions-dark.svg" width="100%" alt="GitHub contribution total for the last year; calendar shows the full year on desktop and recent 12 weeks on mobile. Updated daily.">
 </picture>
 </a>
 

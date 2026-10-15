@@ -38,12 +38,12 @@ def text(x, y, value, size=14, color="var(--fg)", extra=""):
     return f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" {extra}>{html.escape(str(value))}</text>'
 
 
-def svg(body, height, mode, title):
+def svg(body, height, mode, title, width=960):
     colors = ("#080e1d", "#eef5ff", "#95a9c9", "#50e8ed", "#a792ff", "#263650") if mode == "dark" else ("#f2f7ff", "#15223c", "#526780", "#007e88", "#7354cf", "#cddaea")
     bg, fg, muted, cyan, violet, line = colors
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="960" height="{height}" viewBox="0 0 960 {height}" role="img"><title>{html.escape(title)}</title>
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img"><title>{html.escape(title)}</title>
 <style>:root{{--bg:{bg};--fg:{fg};--muted:{muted};--cyan:{cyan};--violet:{violet};--line:{line}}}text{{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}}.signal{{animation:breathe 5s ease-in-out infinite}}@keyframes breathe{{50%{{opacity:.55}}}}@media(prefers-reduced-motion:reduce){{.signal{{animation:none}}}}</style>
-<rect x="1" y="1" width="958" height="{height-2}" rx="16" fill="{bg}" stroke="{line}"/>{body}</svg>'''
+<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="16" fill="{bg}" stroke="{line}"/>{body}</svg>'''
 
 
 def render(user, repos, calendar, stamp):
@@ -62,6 +62,19 @@ def render(user, repos, calendar, stamp):
     body += text(30, 300, "PRIMARY LANGUAGES / " + (" · ".join(languages) or "—"), 12, "var(--muted)")
     body += text(30, 327, "UPDATED " + stamp + " UTC · SOURCE: GITHUB", 10, "var(--muted)")
     output = {f"activity-{mode}.svg": svg(body, 350, mode, "Public GitHub repository statistics. Updated " + stamp) for mode in ("dark", "light")}
+    compact = text(30, 40, "PUBLIC WORKSPACE / TELEMETRY", 17, "var(--cyan)")
+    metrics = [(len(repos), "PUBLIC REPOS"), (sum(r["stargazers_count"] for r in original), "STARS / OWN WORK"), (user["followers"], "FOLLOWERS"), (len(languages), "PRIMARY LANGUAGES")]
+    for i, (value, label) in enumerate(metrics):
+        x, y = 32 + (i % 2)*280, 106 + (i // 2)*96
+        compact += text(x,y,value,44) + text(x,y+28,label,16,"var(--muted)")
+    compact += '<path d="M30 254H570" stroke="var(--line)"/>'
+    compact += text(30,286,"RECENT PUBLIC PUSHES",16,"var(--violet)")
+    for i,r in enumerate(recent):
+        compact += text(30,320+i*29,r["name"][:28],19)
+        compact += text(568,320+i*29,(r.get("pushed_at") or "")[:10],16,"var(--muted)",'text-anchor="end"')
+    compact += text(30,410,"UPDATED " + stamp + " UTC",15,"var(--muted)")
+    for mode in ("dark", "light"):
+        output[f"activity-mobile-{mode}.svg"] = svg(compact,432,mode,"Public GitHub statistics. Updated " + stamp,600)
     weeks = calendar["weeks"]
     all_days = [day for week in weeks for day in week["contributionDays"]]
     counts = [day["contributionCount"] for day in all_days]
@@ -92,6 +105,16 @@ def render(user, repos, calendar, stamp):
         matrix += text(929,270,"UPDATED " + stamp + " UTC",10,"var(--muted)",'text-anchor="end"')
         matrix += '<circle class="signal" cx="914" cy="34" r="4" fill="var(--cyan)"/>'
         output[f"contributions-{mode}.svg"] = svg(matrix, 292, mode, "GitHub contribution calendar. Updated " + stamp)
+        compact_matrix = text(30,39,"CONTRIBUTIONS / LAST YEAR",17,"var(--cyan)")
+        compact_matrix += text(30,91,calendar["totalContributions"],40) + text(142,91,"contributions",19,"var(--muted)")
+        compact_matrix += text(30,128,"RECENT 12 WEEKS",15,"var(--violet)")
+        for w,week in enumerate(weeks[-12:]):
+            for day in week["contributionDays"]:
+                count=day["contributionCount"]
+                level=0 if count==0 else min(4,1+int(3*(count/max(1,peak))))
+                compact_matrix += f'<rect x="{38+w*44}" y="{148+day["weekday"]*23}" width="38" height="18" rx="3" fill="{colors[level]}"><title>{day["date"]}: {count} contributions</title></rect>'
+        compact_matrix += text(30,331,"UPDATED " + stamp + " UTC",15,"var(--muted)")
+        output[f"contributions-mobile-{mode}.svg"] = svg(compact_matrix,354,mode,"Yearly contribution total and recent 12-week calendar. Updated " + stamp,600)
     return output
 
 
@@ -106,7 +129,7 @@ def main():
     ASSETS.mkdir(exist_ok=True)
     for filename, content in output.items():
         (ASSETS / filename).write_text(content, encoding="utf-8")
-    print("Updated four SVG cards from GitHub data.")
+    print("Updated eight desktop and mobile SVG cards from GitHub data.")
 
 
 if __name__ == "__main__":
