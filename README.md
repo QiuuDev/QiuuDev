@@ -1,123 +1,120 @@
+<a href="https://portfolio-qodri.netlify.app/">
 <picture>
-  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/hero-mobile-dark.svg">
-  <source media="(max-width: 768px)" srcset="assets/hero-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-  <img src="assets/hero-dark.svg" width="100%" alt="QiuuDev — building useful things, shaping better experiences. Animated cyber terminal with a Q monogram.">
+  <source media="(max-width: 768px)" srcset="assets/portfolio-hero-mobile.svg">
+  <img src="assets/portfolio-hero.svg" width="100%" alt="Muhammad Qodri / QiuuDev. Front-End Developer at Talikama Creative. Web, mobile and automation. Lazy by nature. Efficient by choice. Automated by design.">
+</picture>
+</a>
+
+<p align="center"><a href="https://portfolio-qodri.netlify.app/"><b>VIEW PORTFOLIO ↗</b></a> &nbsp; · &nbsp; <a href="https://github.com/QiuuDev?tab=repositories">EXPLORE REPOSITORIES ↗</a></p>
+
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/portfolio-section-01-mobile.svg">
+  <img src="assets/portfolio-section-01.svg" width="100%" alt="01 / About">
 </picture>
 
-<p align="center">
-  <a href="#01--about">ABOUT</a> &nbsp; / &nbsp;
-  <a href="#02--toolkit">TOOLKIT</a> &nbsp; / &nbsp;
-  <a href="#03--selected-work">PROJECTS</a> &nbsp; / &nbsp;
-  <a href="#04--activity">ACTIVITY</a> &nbsp; / &nbsp;
-  <a href="#05--connect">CONNECT</a>
-</p>
-
-## 01 / About
-
-**Hi, I'm Qiu — also known as BoringDev.**
-
-I build web applications that bring everyday workflows into focus: scheduling, booking, and the APIs behind them. I enjoy clean interfaces, thoughtful details, and a little futuristic energy.
-
-```text
-$ cat developer.config
-focus      → web applications · backend APIs · interface design
-building   → scheduling tools & booking experiences
-design     → clear structure · subtle motion · purposeful detail
-mindset    → build, learn, refine
-```
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/portfolio-about-mobile.svg">
+  <img src="assets/portfolio-about.svg" width="100%" alt="Part-time Front-End Developer at Talikama Creative. Computer Science student at Universitas Bumigora. I build web apps, mobile apps and automation.">
+</picture>
 
 <details>
-<summary><b>Versi Bahasa Indonesia</b></summary>
+<summary>About me · Bahasa Indonesia</summary>
 
-Saya mengembangkan aplikasi web untuk membantu kebutuhan sehari-hari, mulai dari pengelolaan jadwal hingga pemesanan lapangan. Saya menyukai antarmuka yang rapi, detail yang dipikirkan dengan baik, dan sentuhan futuristik.
+Saya Muhammad Qodri, juga dikenal sebagai QiuuDev / BoringDev. Saya bekerja paruh waktu sebagai Front-End Developer di Talikama Creative sambil kuliah Ilmu Komputer di Universitas Bumigora. Saya membangun aplikasi web, aplikasi mobile, dan otomatisasi. PHP, Dart/Flutter, serta Python adalah fokus utama saya; teknologi lain saya gunakan sesuai kebutuhan proyek.
+
+Prinsip saya: **Lazy by nature. Efficient by choice. Automated by design.**
 
 </details>
 
-## 02 / Toolkit
-
 <picture>
-  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/toolkit-mobile-dark.svg">
-  <source media="(max-width: 768px)" srcset="assets/toolkit-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/toolkit-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/toolkit-light.svg">
-  <img src="assets/toolkit-dark.svg" width="100%" alt="Project toolkit: PHP, Laravel, MySQL, JavaScript, HTML, CSS, Git, and Vite.">
+  <source media="(max-width: 768px)" srcset="assets/portfolio-section-02-mobile.svg">
+  <img src="assets/portfolio-section-02.svg" width="100%" alt="02 / Toolkit">
 </picture>
 
-Technologies used across my public projects. Always learning through building.
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/portfolio-toolkit-mobile.svg">
+  <img src="assets/portfolio-toolkit.svg" width="100%" alt="Core: PHP, Dart/Flutter, Python. Also JavaScript, TypeScript, React/Next.js, HTML/CSS, Laravel, WordPress, Git, Firebase and Supabase.">
+</picture>
 
-## 03 / Selected work
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/portfolio-section-03-mobile.svg">
+  <img src="assets/portfolio-section-03.svg" width="100%" alt="03 / Selected work">
+</picture>
+
+<a href="https://lombokgenerator.xyz/">
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/portfolio-project-generator-mobile.svg">
+  <img src="assets/portfolio-project-generator.svg" width="100%" alt="LOMBOK GENERATOR. Live document previews, quotations and invoice PDFs. HTML / CSS / JAVASCRIPT / jsPDF.">
+</picture>
+</a>
+
+<p><a href="https://lombokgenerator.xyz/">Live website ↗</a> &nbsp; · &nbsp; <a href="https://github.com/QiuuDev/generator_invoice">Public repository ↗</a></p>
+
+<a href="https://primetransindo.com/">
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/portfolio-project-prime-mobile.svg">
+  <img src="assets/portfolio-project-prime.svg" width="100%" alt="PRIME TRANS INDO. A vehicle rental website delivered independently. WORDPRESS / FRONT-END DEVELOPMENT.">
+</picture>
+</a>
 
 <a href="https://github.com/QiuuDev/Qiu_Schedule">
 <picture>
-  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/project-schedule-mobile-dark.svg">
-  <source media="(max-width: 768px)" srcset="assets/project-schedule-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/project-schedule-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/project-schedule-light.svg">
-  <img src="assets/project-schedule-dark.svg" width="100%" alt="01 — Qiu's Schedule ↗">
+  <source media="(max-width: 768px)" srcset="assets/portfolio-project-schedule-mobile.svg">
+  <img src="assets/portfolio-project-schedule.svg" width="100%" alt="QIU SCHEDULE. Scheduling, notifications and calendar workflows. PHP / MYSQL / JAVASCRIPT.">
 </picture>
 </a>
 
-**A clearer rhythm for everyday plans.** A PHP scheduling application with authentication, profile management, notifications, and an analytics dashboard.
-
-`PHP` · `MySQL` · `JavaScript` &nbsp; **[Explore project →](https://github.com/QiuuDev/Qiu_Schedule#readme)**
-
-<a href="https://github.com/QiuuDev/booking-badminton">
+<a href="https://github.com/QiuuDev/stride-running-coach">
 <picture>
-  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/project-booking-mobile-dark.svg">
-  <source media="(max-width: 768px)" srcset="assets/project-booking-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/project-booking-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/project-booking-light.svg">
-  <img src="assets/project-booking-dark.svg" width="100%" alt="02 — Booking Badminton ↗">
+  <source media="(max-width: 768px)" srcset="assets/portfolio-project-stride-mobile.svg">
+  <img src="assets/portfolio-project-stride.svg" width="100%" alt="STRIDE RUNNING COACH. A personal running companion with local activity data. DART / FLUTTER / LOCAL STORAGE.">
 </picture>
 </a>
 
-**From an available court to a confirmed booking.** A Laravel API project documenting JWT authentication, court reservations, payment verification, and activity logs.
-
-`Laravel` · `PHP` · `MySQL` · `JWT` &nbsp; **[Read the API docs →](https://github.com/QiuuDev/booking-badminton#readme)**
+<a href="https://github.com/QiuuDev/cyberbullying-detector">
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/portfolio-project-python-mobile.svg">
+  <img src="assets/portfolio-project-python.svg" width="100%" alt="CYBERBULLYING DETECTOR. Text classification experiments with a Flask interface. PYTHON / FLASK / MACHINE LEARNING.">
+</picture>
+</a>
 
 <details>
-<summary><b>Explore the rest of the workspace</b></summary>
+<summary>More public projects</summary>
 
-- [Badminton API](https://github.com/QiuuDev/badminton-api) — another part of my badminton booking experiments.
-- [Badminton Booking](https://github.com/QiuuDev/badminton-booking) — a PHP project in the same domain.
-- [All public repositories](https://github.com/QiuuDev?tab=repositories) — projects, experiments, and work in progress.
+- [HoloPage Komik](https://github.com/QiuuDev/holopage-komik) — PHP comic reading web application.
+- [Health Workout App](https://github.com/QiuuDev/health-workout-app) — Flutter health and workout application.
+- [Flutter Firebase CRUD](https://github.com/QiuuDev/flutter-firebase-crud) — Flutter application with Firebase data workflows.
+- [All public repositories](https://github.com/QiuuDev?tab=repositories) — more projects and experiments.
 
 </details>
 
-## 04 / Activity
-
-<a href="https://github.com/QiuuDev?tab=repositories">
 <picture>
-  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/activity-mobile-dark.svg">
-  <source media="(max-width: 768px)" srcset="assets/activity-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.svg">
-  <img src="assets/activity-dark.svg" width="100%" alt="GitHub activity dashboard showing public repository statistics and recently updated projects. Generated daily; timestamp appears on the card.">
+  <source media="(max-width: 768px)" srcset="assets/portfolio-section-04-mobile.svg">
+  <img src="assets/portfolio-section-04.svg" width="100%" alt="04 / Activity">
+</picture>
+
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/activity-mobile-dark.svg">
+  <img src="assets/activity-dark.svg" width="100%" alt="Public repository statistics and recent pushes. The card shows its refresh date.">
+</picture>
+
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/contributions-mobile-dark.svg">
+  <img src="assets/contributions-dark.svg" width="100%" alt="GitHub contribution calendar. The card shows its refresh date.">
+</picture>
+
+<sub>Public repository data, refreshed automatically. Contribution counts follow GitHub’s calendar. <a href="https://github.com/QiuuDev/QiuuDev/actions/workflows/profile.yml">Refresh status</a>.</sub>
+
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/portfolio-section-05-mobile.svg">
+  <img src="assets/portfolio-section-05.svg" width="100%" alt="05 / Connect">
+</picture>
+
+<a href="mailto:qodriodi91@gmail.com">
+<picture>
+  <source media="(max-width: 768px)" srcset="assets/portfolio-contact-mobile.svg">
+  <img src="assets/portfolio-contact.svg" width="100%" alt="Contact Muhammad Qodri: qodriodi91@gmail.com. Websites, applications and automation.">
 </picture>
 </a>
 
-<a href="https://github.com/QiuuDev?tab=overview">
-<picture>
-  <source media="(max-width: 768px) and (prefers-color-scheme: dark)" srcset="assets/contributions-mobile-dark.svg">
-  <source media="(max-width: 768px)" srcset="assets/contributions-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/contributions-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/contributions-light.svg">
-  <img src="assets/contributions-dark.svg" width="100%" alt="GitHub contribution total for the last year; calendar shows the full year on desktop and recent 12 weeks on mobile. Updated daily.">
-</picture>
-</a>
-
-<sub>Generated from GitHub data. Repository statistics cover public repositories; contribution counts reflect the calendar returned by GitHub. [Update status](https://github.com/QiuuDev/QiuuDev/actions/workflows/profile.yml).</sub>
-
-## 05 / Connect
-
-Explore a project, open an issue with an idea, or follow along as I build.
-
-**[Browse my work ↗](https://github.com/QiuuDev?tab=repositories)** &nbsp; · &nbsp; **[Start a project conversation ↗](https://github.com/QiuuDev/Qiu_Schedule/issues)**
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/footer-light.svg">
-  <img src="assets/footer-dark.svg" width="100%" alt="QiuuDev — build with intent, keep exploring.">
-</picture>
+<p align="center"><a href="https://portfolio-qodri.netlify.app/"><b>PORTFOLIO ↗</b></a> &nbsp; · &nbsp; <a href="https://www.linkedin.com/in/muhammad-qodri-4956a731a/">LINKEDIN ↗</a> &nbsp; · &nbsp; <a href="https://www.instagram.com/odi.qiu/">INSTAGRAM ↗</a> &nbsp; · &nbsp; <a href="https://wa.me/6285964403427">WHATSAPP ↗</a></p>

@@ -39,7 +39,7 @@ def text(x, y, value, size=14, color="var(--fg)", extra=""):
 
 
 def svg(body, height, mode, title, width=960):
-    colors = ("#080e1d", "#eef5ff", "#95a9c9", "#50e8ed", "#a792ff", "#263650") if mode == "dark" else ("#f2f7ff", "#15223c", "#526780", "#007e88", "#7354cf", "#cddaea")
+    colors = ("#020609", "#e4f2f8", "#8ca9b8", "#00f5ff", "#55cbd8", "#15333e") if mode == "dark" else ("#f2f9fc", "#122b38", "#526e7c", "#007b85", "#087c88", "#c8dde5")
     bg, fg, muted, cyan, violet, line = colors
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img"><title>{html.escape(title)}</title>
 <style>:root{{--bg:{bg};--fg:{fg};--muted:{muted};--cyan:{cyan};--violet:{violet};--line:{line}}}text{{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}}.signal{{animation:breathe 5s ease-in-out infinite}}@keyframes breathe{{50%{{opacity:.55}}}}@media(prefers-reduced-motion:reduce){{.signal{{animation:none}}}}</style>
@@ -80,7 +80,7 @@ def render(user, repos, calendar, stamp):
     counts = [day["contributionCount"] for day in all_days]
     peak = max(counts, default=0)
     for mode in ("dark", "light"):
-        colors = ["#152238", "#124b55", "#14838a", "#24b8be", "#50e8ed"] if mode == "dark" else ["#dfe8f4", "#b7e6e5", "#71cbcd", "#2da4af", "#087c88"]
+        colors = ["#10232d", "#07505b", "#078797", "#05bdce", "#00f5ff"] if mode == "dark" else ["#dfedf2", "#b7e6e5", "#71cbcd", "#2da4af", "#087c88"]
         matrix = text(30, 38, "CONTRIBUTION MATRIX / LAST YEAR", 12, "var(--cyan)", 'letter-spacing="1.5"')
         matrix += text(30, 81, f'{calendar["totalContributions"]:,}', 34) + text(190,81,"contributions",14,"var(--muted)")
         matrix += text(929, 80, f'{sum(c > 0 for c in counts)} active days', 14, "var(--muted)", 'text-anchor="end"')
