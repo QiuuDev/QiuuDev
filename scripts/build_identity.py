@@ -36,9 +36,9 @@ def rect(x, y, w, h, fill=PANEL, stroke=LINE, radius=8):
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{fill}" stroke="{stroke}"/>'
 
 
-def pill(x, y, label):
-    w = len(label) * 8.6 + 24
-    return rect(x, y, w, 28, "#07202a", "#164653", 3) + text(x+12, y+19, label, 13, CYAN), w
+def pill(x, y, label, size=13):
+    w = len(label) * size * .66 + 24
+    return rect(x, y, w, size+15, "#07202a", "#164653", 3) + text(x+12, y+size+6, label, size, CYAN), w
 
 
 def svg(name, body, height, width=960, label=""):
@@ -55,7 +55,7 @@ def section(number, name, subtitle):
     body += text(930, 29, subtitle, 11, MUTED, 'text-anchor="end" letter-spacing="1"')
     body += f'<path d="M30 48H930" stroke="{LINE}"/><path d="M30 48H102" stroke="{CYAN}"/>'
     svg(f"section-{number}", body, 62, label=f"{number} / {name}")
-    compact = text(24,27,f"{number} /",15,CYAN) + title(87,31,name,22)
+    compact = text(24,29,f"{number} /",18,CYAN) + title(94,33,name,28)
     compact += f'<path d="M24 48H576" stroke="{LINE}"/><path d="M24 48H96" stroke="{CYAN}"/>'
     svg(f"section-{number}-mobile",compact,62,600,label=f"{number} / {name}")
 
@@ -63,16 +63,16 @@ def section(number, name, subtitle):
 def hero(mobile=False):
     if mobile:
         b = '<rect x="12" y="12" width="576" height="450" fill="url(#grid)" opacity=".55"/>'
-        b += text(28,38,"QIU // DEVELOPER PORTFOLIO",14,CYAN,'letter-spacing="2"')
-        b += '<circle class="pulse" cx="35" cy="77" r="4" fill="#00f5ff"/>' + text(49,82,"FRONT-END DEVELOPER @ TALIKAMA",13,MUTED)
+        b += text(28,38,"QIU // DEVELOPER PORTFOLIO",18,CYAN,'letter-spacing="1"')
+        b += '<circle class="pulse" cx="35" cy="77" r="4" fill="#00f5ff"/>' + text(49,82,"FRONT-END DEVELOPER @ TALIKAMA",18,MUTED)
         b += title(26,155,"MUHAMMAD",49,CYAN,True) + title(26,222,"QODRI",70)
-        b += text(30,263,"QiuuDev / BoringDev",18,CYAN)
-        b += text(30,305,"WEB DEVELOPMENT / MOBILE APPS",17)
-        b += text(30,333,"PHP  /  DART + FLUTTER  /  PYTHON",16,MUTED)
+        b += text(30,263,"QiuuDev / BoringDev",24,CYAN)
+        b += text(30,305,"WEB DEVELOPMENT / MOBILE APPS",22)
+        b += text(30,333,"PHP / DART + FLUTTER / PYTHON",22,MUTED)
         b += rect(28,361,544,77,"#06202a","#164653",4)
-        b += text(44,389,"Lazy by nature. Efficient by choice.",16,CYAN)
-        b += text(44,416,"Automated by design.",16,CYAN)
-        b += text(30,463,"MATARAM, INDONESIA  /  VIEW PORTFOLIO",12,MUTED)
+        b += text(44,389,"Lazy by nature. Efficient by choice.",22,CYAN)
+        b += text(44,416,"Automated by design.",22,CYAN)
+        b += text(30,463,"MATARAM, INDONESIA / VIEW PORTFOLIO",18,MUTED)
         svg("hero-mobile",b,486,600,"Muhammad Qodri — Front-End Developer at Talikama Creative. PHP, Dart/Flutter, Python. Lazy by nature. Efficient by choice. Automated by design.")
         return
     b = '<rect x="12" y="12" width="936" height="400" fill="url(#grid)" opacity=".55"/><circle cx="760" cy="194" r="210" fill="url(#glow)"/>'
@@ -100,13 +100,13 @@ def about(mobile=False):
         ("STUDY", "Computer Science, Universitas Bumigora"),
         ("FOCUS", "Web apps, mobile apps, automation"),
     ]
-    b = text(28,32,"qiu@workspace:~$ whoami",16,CYAN)
+    b = text(28,32,"qiu@workspace:~$ whoami",22 if mobile else 16,CYAN)
     b += f'<path d="M28 50H{w-28}" stroke="{LINE}"/>'
     if mobile:
         for i,(label,value) in enumerate(lines):
             y=80+i*58
-            b+=text(28,y,label,12,CYAN,'letter-spacing="1.4"')+text(28,y+23,value,18)
-        b+=text(28,393,"I turn repetitive work into useful tools.",18,MUTED)
+            b+=text(28,y,label,16,CYAN,'letter-spacing="1.4"')+text(28,y+26,value,24)
+        b+=text(28,393,"Useful tools. Less repetitive work.",24,MUTED)
         height=420
     else:
         for i,(label,value) in enumerate(lines):
@@ -127,17 +127,18 @@ def toolkit(mobile=False):
         else:
             x,y,cw=24+i*310,24,292
         b+=rect(x,y,cw,96)
-        b+=text(x+16,y+22,n,11,CYAN)+title(x+16,y+50,name,19)
-        b+=text(x+16,y+77,desc,16 if mobile else 12,MUTED)
+        b+=text(x+16,y+22,n,15 if mobile else 11,CYAN)+title(x+16,y+50,name,23 if mobile else 19)
+        b+=text(x+16,y+79,desc,24 if mobile else 12,MUTED)
     y=388 if mobile else 158
-    b+=text(26,y,"ALSO IN MY TOOLKIT",12,CYAN,'letter-spacing="1.5"')
+    b+=text(26,y,"ALSO IN MY TOOLKIT",18 if mobile else 12,CYAN,'letter-spacing="1.5"')
     tags=["JavaScript","TypeScript","React / Next.js","HTML / CSS","Laravel","WordPress","Git","Firebase","Supabase"]
     x,y=24,y+16
     for tag in tags:
-        needed=len(tag)*8.6+24
+        size=20 if mobile else 13
+        needed=len(tag)*size*.66+24
         if x+needed>w-24:
-            x,y=24,y+37
-        p,pw=pill(x,y,tag)
+            x,y=24,y+(46 if mobile else 37)
+        p,pw=pill(x,y,tag,size)
         b+=p
         x+=pw+10
     svg("toolkit-mobile" if mobile else "toolkit",b,y+51,w,"Core stacks: PHP, Dart/Flutter, Python. Also JavaScript, TypeScript, React/Next.js, HTML/CSS, Laravel, WordPress, Git, Firebase and Supabase.")
@@ -155,22 +156,22 @@ PROJECTS=[
 def project(p,mobile=False):
     key,n,name,kicker,desc,stack,features,accent=p
     w=600 if mobile else 960
-    b=text(26,29,f"{n} / {kicker}",11,CYAN,'letter-spacing="1"')
-    size=22 if mobile else 27
+    b=text(26,29,f"{n} / {kicker}",17 if mobile else 11,CYAN,'letter-spacing="1"')
+    size=26 if mobile else 27
     b+=title(25,75,name,size)
     if mobile:
         # Wrap on words using conservative monospace metrics.
         words=desc.split(); lines=[""]
         for word in words:
-            if len(lines[-1])+len(word)+1>46: lines.append("")
+            if len(lines[-1])+len(word)+1>36: lines.append("")
             lines[-1]+=(" " if lines[-1] else "")+word
-        for i,line in enumerate(lines): b+=text(26,110+i*25,line,17,MUTED)
-        y=110+len(lines)*25+14
-        b+=text(26,y,stack,13,CYAN)
+        for i,line in enumerate(lines): b+=text(26,110+i*34,line,24,MUTED)
+        y=110+len(lines)*34+14
+        b+=text(26,y,stack,18,CYAN)
         b+=f'<path d="M26 {y+20}H574" stroke="{LINE}"/>'
-        for i,f in enumerate(features): b+=text(26,y+49+i*27,"+ "+f,16,FG)
-        b+=text(574,y+110,"EXPLORE PROJECT  /  OPEN",12,CYAN,'text-anchor="end"')
-        h=y+135
+        for i,f in enumerate(features): b+=text(26,y+49+i*32,"+ "+f,23,FG)
+        b+=text(574,y+120,"EXPLORE PROJECT  /  OPEN",18,CYAN,'text-anchor="end"')
+        h=y+145
     else:
         b+=text(26,111,desc,17,MUTED)+text(26,146,stack,12,CYAN)
         b+=f'<path d="M670 28V164" stroke="{LINE}"/>'
@@ -182,12 +183,12 @@ def project(p,mobile=False):
 
 def contact(mobile=False):
     w=600 if mobile else 960
-    b=title(28,52,"LET'S BUILD SOMETHING.",23 if mobile else 32)
-    b+=text(28,88,"Websites, applications and fewer manual steps.",16,MUTED)
+    b=title(28,52,"LET'S BUILD SOMETHING.",25 if mobile else 32)
+    b+=text(28,88,"Websites, apps and less manual work." if mobile else "Websites, applications and fewer manual steps.",22 if mobile else 16,MUTED)
     b+=f'<path d="M28 112H{w-28}" stroke="{LINE}"/>'
-    b+=text(28,145,"qodriodi91@gmail.com",19,CYAN)
-    b+=text(28,177,"Mataram, Indonesia / Remote collaboration",15,MUTED)
-    b+=text(28,219,"QIU // CODE WITH INTENT. AUTOMATE THE REST.",12,CYAN)
+    b+=text(28,145,"qodriodi91@gmail.com",26 if mobile else 19,CYAN)
+    b+=text(28,177,"Mataram, Indonesia / Remote collaboration",19 if mobile else 15,MUTED)
+    b+=text(28,219,"QIU // CODE WITH INTENT. AUTOMATE THE REST.",17 if mobile else 12,CYAN)
     svg("contact-mobile" if mobile else "contact",b,246,w,"Contact Muhammad Qodri: qodriodi91@gmail.com. Mataram, Indonesia. Websites, applications and automation.")
 
 
